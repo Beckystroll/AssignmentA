@@ -1,14 +1,8 @@
 #pragma once
 
 #include <string>
-#include <list>
 #include <fstream>
-#include <memory>
-#include <vector>
 
-#include "DataScrubberInterface.h"
-#include "DataItem.h"
-#include "TypeDefs.h"
 #include "ItemGroup.h"
 
 class BigDataReader

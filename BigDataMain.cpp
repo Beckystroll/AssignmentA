@@ -6,20 +6,14 @@ C++ program to read, scrub and output a large data file
 
 
 #include <iostream>   
-#include <algorithm> 
-#include <vector>
 
-#include "DataItem.h"
-#include "BigDataReader.h"
-#include "BigDataWriter.h"
-#include "DateRangeScrubber.h"
 #include "BigDataManager.h"
 #include "BigDataMultiThreadMgr.h"
 
 
 using namespace std;
 
-const std::string USAGE = "BigData_HW1 input_file signal_file error_file [no_of_records_per_row]\n";
+const std::string USAGE = "BigData_HW1 input_file signal_file error_file [no_of_records_per_row] [max concurrent threads] [initial no of threads per type] \n";
 const int NO_OF_RECORDS = 1000;
 const int MAX_CONCURRENT_THREADS = 10;
 const int NO_THREADS = 10;
@@ -63,7 +57,7 @@ int main(int argc, const char* argv[])
 		mgr.run();
 	}
 
-	cin.get();
+	//cin.get();  // for microsoft testing only
 	return 0;                                 // terminate main()
 }
 

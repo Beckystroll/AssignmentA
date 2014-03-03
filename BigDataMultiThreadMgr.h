@@ -11,7 +11,7 @@
 class BigDataMultiThreadMgr
 {
 
-	// Manages the Big data workflow
+// Manages the Big data workflow - multi-thread version
 
 public:
 	BigDataMultiThreadMgr(const std::string& inputFile_, const std::string& signalFile_, const std::string& errorFile_, const int noRecords_, const int maxConcurrentThreads_ = 1, const int noThreads_ = 1 )
@@ -64,19 +64,6 @@ private:
 	static int noRecords;
 	static int maxConcurrentThreads;
 	static int noThreads;
-
-	//static unsigned short* inFlight;
-	//static int lastId;
-	//static bool lastIdSet;
-	//static bool closeDown;
-
-	// can't get boost to work at work!! so long for now
-
-	//static clock_t read_duration;
-	//static clock_t parse_duration;
-	//static clock_t scrub_duration;
-	//static clock_t signal_write_duration;
-	//static clock_t error_write_duration;
 
 	static WorkQueue2* myWorkQueue;
 	static BigDataReader* dataReaderPtr; 

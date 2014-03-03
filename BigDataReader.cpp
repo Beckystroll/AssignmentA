@@ -1,9 +1,7 @@
 #include "BigDataReader.h"
 
-#include <memory>
+
 #include <iostream>
-
-
 
 
 BigDataReader::~BigDataReader(void)

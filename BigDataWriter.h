@@ -1,14 +1,12 @@
 #pragma once
 
+
+#include <stdio.h>
 #include <string>
-#include <vector>
-//#include <fstream>
-//#include <memory>
 
 #include "DataItem.h"
 #include "ItemGroup.h"
 
-#include <stdio.h>
 
 class BigDataWriter
 {

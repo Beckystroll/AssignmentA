@@ -2,7 +2,6 @@
 
 #include <string>
 #include <fstream>
-#include <memory>
 
 class DataItem
 {

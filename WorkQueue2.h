@@ -14,10 +14,8 @@ typedef std::pair<int, int> IntPair;
 
 class WorkQueue2 {
 public:
-	//const int COMPLETED = -200;
-	//const int OUT_OF_SEQUENCE = -100;
-	//const int NO_DATA = -50;
-	const std::chrono::milliseconds WAIT_DURATION_10MS = std::chrono::milliseconds(1);
+
+	const std::chrono::milliseconds WAIT_DURATION_1MS = std::chrono::milliseconds(1);
 	const IntPair COMPLETED_PAIR = IntPair(-1, -1);
 
 	WorkQueue2(int maxConcurrentThreads_) : maxConcurrentThreads(maxConcurrentThreads_), read_duration(0), parse_duration(0), scrub_duration(0), error_write_duration(0), signal_write_duration(0)

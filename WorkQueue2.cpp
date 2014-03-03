@@ -104,7 +104,7 @@ IntPair WorkQueue2::nextParse() {
 	std::unique_lock<std::mutex> lock(ParseMutex_);
 
 	while (parse_.empty() && !isErrWriterComplete)
-		parseToBeDone_.wait_for(lock, WAIT_DURATION_10MS);
+		parseToBeDone_.wait_for(lock, WAIT_DURATION_1MS);
 
 	if (isErrWriterComplete)
 		return(COMPLETED_PAIR);
@@ -119,7 +119,7 @@ IntPair WorkQueue2::nextScrub1() {
 	std::unique_lock<std::mutex> lock(Scrub1Mutex_);
 
 	while (scrub1_.empty() && !isErrWriterComplete)
-		scrub1ToBeDone_.wait_for(lock, WAIT_DURATION_10MS);
+		scrub1ToBeDone_.wait_for(lock, WAIT_DURATION_1MS);
 
 	if (isErrWriterComplete)
 		return(COMPLETED_PAIR);
@@ -133,7 +133,7 @@ IntPair WorkQueue2::nextScrub2() {
 	std::unique_lock<std::mutex> lock(Scrub2Mutex_);
 
 	while (scrub2_.empty() && !isErrWriterComplete)
-		scrub2ToBeDone_.wait_for(lock, WAIT_DURATION_10MS);
+		scrub2ToBeDone_.wait_for(lock, WAIT_DURATION_1MS);
 
 	if (isErrWriterComplete)
 		return(COMPLETED_PAIR);
@@ -147,7 +147,7 @@ IntPair WorkQueue2::nextScrub3() {
 	std::unique_lock<std::mutex> lock(Scrub3Mutex_);
 
 	while (scrub3_.empty() && !isErrWriterComplete)
-		scrub3ToBeDone_.wait_for(lock, WAIT_DURATION_10MS);
+		scrub3ToBeDone_.wait_for(lock, WAIT_DURATION_1MS);
 
 	if (isErrWriterComplete)
 		return(COMPLETED_PAIR);
@@ -163,7 +163,7 @@ IntPair WorkQueue2::nextSort() {
 	std::unique_lock<std::mutex> lock(SortMutex_);
 
 	while (sort_.empty() && !isErrWriterComplete)
-		sortToBeDone_.wait_for(lock, WAIT_DURATION_10MS);
+		sortToBeDone_.wait_for(lock, WAIT_DURATION_1MS);
 
 	if (isErrWriterComplete)
 		return(COMPLETED_PAIR);
@@ -178,7 +178,7 @@ IntPair WorkQueue2::nextDuplicate() {
 	std::unique_lock<std::mutex> lock(DuplicateMutex_);
 
 	while (duplicate_.empty() && !isErrWriterComplete)
-		duplicateToBeDone_.wait_for(lock, WAIT_DURATION_10MS);
+		duplicateToBeDone_.wait_for(lock, WAIT_DURATION_1MS);
 
 	if (isErrWriterComplete)
 		return(COMPLETED_PAIR);
@@ -193,7 +193,7 @@ IntPair WorkQueue2::nextSigWrite() {
 	std::unique_lock<std::mutex> lock(SigWriteMutex_);
 
 	while (sigWrite_.empty() && !isErrWriterComplete)
-		sigWriteToBeDone_.wait_for(lock, WAIT_DURATION_10MS);
+		sigWriteToBeDone_.wait_for(lock, WAIT_DURATION_1MS);
 
 	if (isErrWriterComplete)
 		return(COMPLETED_PAIR);
@@ -208,7 +208,7 @@ IntPair WorkQueue2::nextErrWrite() {
 	std::unique_lock<std::mutex> lock(ErrWriteMutex_);
 
 	while (errWrite_.empty())
-		errWriteToBeDone_.wait_for(lock, WAIT_DURATION_10MS);
+		errWriteToBeDone_.wait_for(lock, WAIT_DURATION_1MS);
 
 	IntPair tmp = errWrite_.front();
 	errWrite_.pop_front();

@@ -1,24 +1,9 @@
 #include "BigDataWriter.h"
 
-#include <algorithm>
+//#include <algorithm>
 #include <cstdio>
 #include <iostream>
 
-
-//struct CopyIfPred {
-//	CopyIfPred(bool errorInd_) : errorInd(errorInd_) {}
-//	bool operator() (DataItemPtr itemPtr) {
-//		if (errorInd == false && itemPtr->getErrorType() == DataItem::NO_ERROR)
-//			return (true);
-//		else if (errorInd == true && itemPtr->getErrorType() != DataItem::NO_ERROR)
-//			return (true);
-//		else
-//			return (false);
-//	}
-//
-//private:
-//	bool errorInd;
-//};
 
 BigDataWriter::~BigDataWriter()
 {

@@ -1,11 +1,6 @@
 #include "DataItem.h"
 
 #include <iostream>
-#include <boost/algorithm/string.hpp>
-
-
-#include <boost/regex.hpp>
-#include <boost/algorithm/string/regex.hpp>
 
 using namespace std;
 
